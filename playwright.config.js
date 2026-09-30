@@ -39,6 +39,9 @@ export default defineConfig({
     launchOptions: {
       slowMo: 1000,
     },
+  
+    screenshot: 'only-on-failure'
+
   },
 
   /* Configure projects for major browsers */
