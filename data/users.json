@@ -1,5 +1,9 @@
 [
     {
+        "userName": "tomsmith",
+        "role": "SuperSecretPassword!"
+    },
+    {
         "userName": "user1",
         "role": "Admin"
     },
