@@ -1,0 +1,9 @@
+{
+    "qa" : {
+        "url": "https://the-internet.herokuapp.com"
+    },
+
+    "uat": {
+        "url": "https://the-internet.herokuapp.com"
+    }
+}
