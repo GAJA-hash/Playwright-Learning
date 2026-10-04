@@ -1,3 +1,4 @@
+const { expect } = require('@playwright/test');
 class DropdownPage {
     constructor(page) {
         this.page = page;
@@ -22,6 +23,14 @@ class DropdownPage {
 
     async getSelectedValue() {
         return await this.dropdown.inputValue();
+    }
+
+    async selectOption2() {
+        await this.dropdown.selectOption('2');
+   }
+
+    async verifyOption2Selected() {
+        await expect(this.dropdown).toHaveValue('2');
     }
 }
 

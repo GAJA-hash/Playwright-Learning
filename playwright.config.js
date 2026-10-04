@@ -14,12 +14,14 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export default defineConfig({
   testDir: './tests',
+  /* Global timeout per test (increased to accommodate slowMo: 1000) */
+  timeout: 60000,
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
+  retries: process.env.CI ? 1 : 1,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
@@ -36,11 +38,11 @@ export default defineConfig({
     headless: false,
 
     /* Slow down every action by 1000ms so you can see what's happening */
-    launchOptions: {
-      slowMo: 1000,
-    },
+    launchOptions: {slowMo: 500},
   
-    screenshot: 'only-on-failure'
+    screenshot: 'only-on-failure',
+
+    video: 'retain-on-failure'
 
   },
 
